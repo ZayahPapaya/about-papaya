@@ -20,76 +20,83 @@ alert('Hello, ' + playerName  + '. Please answering the following questions simp
 // Question 1 -
 let a1 = prompt('What are my pronouns? ( 1 ) she/her or ( 2 ) he/him');
 if(a1 === '1'){
-  console.log('correct');
-  // alert('Correct!');
+  ////console.log('correct');
+  alert('Correct!');
   score = score + 1
   console.log(score);
 } else if(a1 === '2') {
-  console.log('incorrect');
-  // alert('Incorrect!');
+  ////console.log('incorrect');
+  alert('Incorrect!');
 } else {
-  console.log('Not an answer.');
+  //console.log('Not an answer.');
+  alert('That is not an answer.');
 }
 
 // Question 2 -
 let a2 = prompt('How many jobs have I had? ( 1 ) 1 or ( 2 ) 2');
 if(a2 === '2'){
-  console.log('correct');
-  // alert('Correct!');
+  //console.log('correct');
+  alert('Correct!');
   score = score + 1
   console.log(score);
 } else if(a2 === '1') {
-  console.log('incorrect');
-  // alert('Incorrect!');
+  //console.log('incorrect');
+  alert('Incorrect!');
 } else {
-  console.log('Not an answer.');
+  //console.log('Not an answer.');
+  alert('That is not an answer.');
 }
 
 // Question 3 -
 let a3 = prompt('Do I drink coffee? ( 1 ) no or ( 2 ) yes');
 if(a3 === '2'){
-  console.log('correct');
-  // alert('Correct!');
+  //console.log('correct');
+  alert('Correct!');
   score = score + 1
   console.log(score);
 } else if(a3 === '1') {
-  console.log('incorrect');
-  // alert('Incorrect!');
+  //console.log('incorrect');
+  alert('Incorrect!');
 } else {
-  console.log('Not an answer.');
+  //console.log('Not an answer.');
+  alert('That is not an answer.');
 }
 
 // Question 4 -
 let a4 = prompt('Which name should you use for me? ( 1 ) Zayah or ( 2 ) Aiden');
 if(a4 === '1'){
-  console.log('correct');
-  // alert('Correct!');
+  //console.log('correct');
+  alert('Correct!');
   score = score + 1
   console.log(score);
 } else if(a4 === '2') {
-  console.log('incorrect');
-  // alert('Incorrect!');
+  //console.log('incorrect');
+  alert('Incorrect!');
 } else {
-  console.log('Not an answer.');
+  //console.log('Not an answer.');
+  alert('That is not an answer.');
 }
 
 // Question 5 -
 let a5 = prompt('Do you want a new set of dice? ( 1 ) yes or ( 2 )');
 if(a5 === '1'){
-  console.log('correct');
-  // alert('Correct!');
+  //console.log('correct');
+  alert('Correct!');
   score = score + 1
   console.log(score);
 } else if(a5 === '2') {
-  console.log('incorrect');
-  // alert('Incorrect!');
+  //console.log('incorrect');
+  alert('Incorrect!');
 } else {
-  console.log('Not an answer.');
+  //console.log('Not an answer.');
+  alert('That is not an answer.');
 }
 
 // Score check
 if(score >= 4){
-  console.log(playerName + ', you passed.');
+  //console.log(playerName + ', you passed.');
+  alert(playerName + ', you passed.');
 } else {
-  console.log(playerName + ', you failed.');
+  //console.log(playerName + ', you failed.');
+  alert(playerName + ', you failed.');
 }
