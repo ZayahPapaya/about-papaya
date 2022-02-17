@@ -78,7 +78,7 @@ if(a4 === '1'){
 }
 
 // Question 5 -
-let a5 = prompt('Do you want a new set of dice? ( 1 ) yes or ( 2 )');
+let a5 = prompt('Do you want a new set of dice? ( 1 ) yes or ( 2 ) no');
 if(a5 === '1'){
   //console.log('correct');
   alert('Correct!');
