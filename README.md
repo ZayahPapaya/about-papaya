@@ -4,7 +4,7 @@
 
 Simple autobiography webpage with a quiz.
 
-### Author: Zayah/Aiden Lang
+### Author: Zayah/Aiden Lang, Derek Douglas, Ken Lindsay, Luis Sandoval
 
 ### Links and Resources
 <!-- * [submission PR](http://xyz.com)
