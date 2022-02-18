@@ -15,7 +15,7 @@
 let score = 0
 let playerName = prompt('What is your name?');
 console.log(playerName);
-alert('Hello, ' + playerName  + '. Please answering the following questions simply with a 1 or a 2.');
+alert('Hello, ' + playerName  + '. Please answer the following questions simply with a 1 or a 2.');
 
 // Question 1 -
 let a1 = prompt('What are my pronouns? ( 1 ) she/her or ( 2 ) he/him');
