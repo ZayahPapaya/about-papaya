@@ -12,19 +12,20 @@
 // + Display the user’s name back to them in your final message to the user.
 
 // console.log('hello world');
-let score = 0
+let score = 0;
+let i = 0;
 let playerName = prompt('What is your name?');
 console.log(playerName);
-alert('Hello, ' + playerName  + '. Please answer the following questions simply with a 1 or a 2.');
+alert('Hello, ' + playerName + '. Please answer the following questions simply with a yes or a no.');
 
 // Question 1 -
-let a1 = prompt('What are my pronouns? ( 1 ) she/her or ( 2 ) he/him');
-if(a1 === '1'){
+let a1 = prompt('Are my pronouns he/him?').toLowerCase();
+if (a1 === 'no') {
   ////console.log('correct');
   alert('Correct!');
-  score = score + 1
+  score = i++;
   console.log(score);
-} else if(a1 === '2') {
+} else if (a1 === 'yes') {
   ////console.log('incorrect');
   alert('Incorrect!');
 } else {
@@ -33,13 +34,13 @@ if(a1 === '1'){
 }
 
 // Question 2 -
-let a2 = prompt('How many jobs have I had? ( 1 ) 1 or ( 2 ) 2');
-if(a2 === '2'){
+let a2 = prompt('Have I had more than one job?').toLowerCase();
+if (a2 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = score + 1
+  score = i++;
   console.log(score);
-} else if(a2 === '1') {
+} else if (a2 === 'no') {
   //console.log('incorrect');
   alert('Incorrect!');
 } else {
@@ -48,13 +49,13 @@ if(a2 === '2'){
 }
 
 // Question 3 -
-let a3 = prompt('Do I drink coffee? ( 1 ) no or ( 2 ) yes');
-if(a3 === '2'){
+let a3 = prompt('Do I drink coffee?').toLowerCase();
+if (a3 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = score + 1
+  score = i++;
   console.log(score);
-} else if(a3 === '1') {
+} else if (a3 === 'no') {
   //console.log('incorrect');
   alert('Incorrect!');
 } else {
@@ -63,13 +64,13 @@ if(a3 === '2'){
 }
 
 // Question 4 -
-let a4 = prompt('Which name should you use for me? ( 1 ) Zayah or ( 2 ) Aiden');
-if(a4 === '1'){
+let a4 = prompt('Do I have a preferred name?').toLowerCase();
+if (a4 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = score + 1
+  score = i++;
   console.log(score);
-} else if(a4 === '2') {
+} else if (a4 === 'no') {
   //console.log('incorrect');
   alert('Incorrect!');
 } else {
@@ -78,13 +79,13 @@ if(a4 === '1'){
 }
 
 // Question 5 -
-let a5 = prompt('Do you want a new set of dice? ( 1 ) yes or ( 2 ) no');
-if(a5 === '1'){
+let a5 = prompt('Do you want a new set of dice?').toLowerCase();
+if (a5 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = score + 1
+  score = i++;
   console.log(score);
-} else if(a5 === '2') {
+} else if (a5 === 'no') {
   //console.log('incorrect');
   alert('Incorrect!');
 } else {
@@ -93,7 +94,7 @@ if(a5 === '1'){
 }
 
 // Score check
-if(score >= 4){
+if (score >= 4) {
   //console.log(playerName + ', you passed.');
   alert(playerName + ', you passed.');
 } else {
