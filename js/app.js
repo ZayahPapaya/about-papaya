@@ -11,9 +11,28 @@
 
 // + Display the user’s name back to them in your final message to the user.
 
+// As a user, I would like to view a series of data related to the site owners interest so that the I can quickly view more information about them.
+// Create a “Top Ten” at the bottom of your HTML page as an ordered list in HTML. Some ideas that you can include could be top ten movies, top ten favorite places, or top ten places to visit. You may choose to do whatever top ten list that you wish.
+// Convert your work experience and education summary into an unordered list using HTML
+
+// + As a user, I would like to be guided to an answer through a series of feedback responses so that I can learn more about the site owner.
+// + Add a 6th question to the guessing game that takes in a numeric input by prompting the user to guess a number.
+// + Indicates through an alert if the guess is “too high” or “too low”.
+// + It should give the user exactly four opportunities to get the correct answer.
+// + After all attempts have been exhausted, tell the user the correct answer. Consider using a loop of some sort.
+
+// As a user, I would like to guess the answer to a question that could have many possibilities so that I can have fun with with a guessing game.
+// Add a 7th question that has multiple possible correct answers that are stored in an array.
+// Give the user 6 attempts to guess the correct answer.
+// The guesses will end once the user guesses a correct answer or they run out of attempts.
+// Display all the possible correct answers to the user.
+// Consider using a loop of some sort for this question.
+
+// As a user, I would like to know my final score so that I can know how well I did.
+// Keep track of the total number of correct answers. At the end tell them how many they got correct out of the 7 questions asked.
+
 // console.log('hello world');
 let score = 0;
-let i = 0;
 let playerName = prompt('What is your name?');
 console.log(playerName);
 alert('Hello, ' + playerName + '. Please answer the following questions simply with a yes or a no.');
@@ -23,7 +42,7 @@ let a1 = prompt('Are my pronouns he/him?').toLowerCase();
 if (a1 === 'no') {
   ////console.log('correct');
   alert('Correct!');
-  score = i++;
+  score++;
   console.log(score);
 } else if (a1 === 'yes') {
   ////console.log('incorrect');
@@ -38,7 +57,7 @@ let a2 = prompt('Have I had more than one job?').toLowerCase();
 if (a2 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = i++;
+  score++;
   console.log(score);
 } else if (a2 === 'no') {
   //console.log('incorrect');
@@ -53,7 +72,7 @@ let a3 = prompt('Do I drink coffee?').toLowerCase();
 if (a3 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = i++;
+  score++;
   console.log(score);
 } else if (a3 === 'no') {
   //console.log('incorrect');
@@ -68,7 +87,7 @@ let a4 = prompt('Do I have a preferred name?').toLowerCase();
 if (a4 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = i++;
+  score++;
   console.log(score);
 } else if (a4 === 'no') {
   //console.log('incorrect');
@@ -83,7 +102,7 @@ let a5 = prompt('Do you want a new set of dice?').toLowerCase();
 if (a5 === 'yes') {
   //console.log('correct');
   alert('Correct!');
-  score = i++;
+  score++;
   console.log(score);
 } else if (a5 === 'no') {
   //console.log('incorrect');
@@ -93,11 +112,112 @@ if (a5 === 'yes') {
   alert('That is not an answer.');
 }
 
-// Score check
+// Question 6 - Random number guessing game 4 chances, log if too high or low. After tell correct answer
+let coinflip = Math.floor(Math.random() * 10) + 1;
+console.log(coinflip);
+for (let i = 0; i < 4; i++) {
+  let a6 = prompt('Guess a number between 1 and 10 inclusive.');
+  //console.log(a6);
+  a6 = parseInt(a6);
+  //let typeCheck = typeof (a6);
+  //console.log(typeCheck);
+  //console.log(a6);
+  if (a6 === coinflip) {
+    //console.log('correct');
+    alert('Correct!');
+    score++;
+    //console.log(score);
+    break;
+  } else if (isNaN(a6)) {
+    //console.log('Not an answer');
+    alert('That is not an answer.');
+  } else {
+    if (a6 < coinflip){
+      alert('A little low.');
+    } else {
+      alert('A little high.');
+    }
+    //console.log('incorrect');
+    //alert('Incorrect!');
+  }
+}
+alert(`The answer was ${coinflip}!`);
+// Question 7 - Favorite D&D classes - multiple correct - display all correct after - 6 attempts
+// first check this is 4. if no, try again with no consequences with a hint. Then once 4, ask 4 times for a different class each time? If all 4, then increment score and continue
+let classes = ['artificer', 'barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard'];
+//let favorites = classes[0, 6, 9, 11];
+let favorites = []
+favorites.push(classes[0]);
+favorites.push(classes[6]);
+favorites.push(classes[9]);
+favorites.push(classes[11]);
+//console.log(favorites);
+//console.log(favorites.length);
+
+//^
+
+
+// ignore below this for now
+let lock = 1;
+let attempts7 = 0;
+let subScore;
+let x;
+while(lock === 1){
+  attempts7 = prompt('How many classes are my favorites?');
+  attempts7 = parseInt(attempts7);
+  //console.log(attempts7);
+  if(attempts7 === favorites.length){
+    let succeeds = [];
+    subScore = 0;
+    for(attempts7 > 1; attempts7--;) {
+      let a7b = prompt('List one of my favorite classes.').toLowerCase();
+
+// I avoided using includes as much as possible, as per instructions, but could not find another way to do this without these two.
+
+      if(favorites.includes(a7b)){
+        if(!succeeds.includes(a7b)){
+        subScore++;
+        x = a7b;
+        alert(`${favorites[x]} is correct.`);
+        succeeds.push(a7b);
+        //console.log(subScore + 'subscore');
+        //console.log(succeeds);
+          } else {
+          alert('You need to list unique answers!');
+          }
+      
+      } else {
+        alert('Incorrect.');
+      }
+        if (subScore === favorites.length) {
+          score++;
+          alert(`You got all ${subScore} correct!`);
+      }
+    }
+  } else if (isNaN(attempts7)) {
+    alert('That is not an answer.');
+  } else {
+    alert('Incorrect.');
+  }
+  //console.log('lock check');
+  //console.log(attempts7);
+  //console.log(favorites.length);
+  console.log(subScore);
+  if(! isNaN(subScore)){
+    if(subScore < 4){
+          alert(`You did not get all ${favorites.length}. The correct answers were ${favorites}`);
+          //console.log('Fail');
+  }
+  }
+  if(attempts7 === -1){
+    lock = 0;
+    //console.log('Locked');
+  }
+}
 if (score >= 4) {
   //console.log(playerName + ', you passed.');
-  alert(playerName + ', you passed.');
+  alert(`${playerName},you passed. Your final score was ${score}`);
 } else {
   //console.log(playerName + ', you failed.');
-  alert(playerName + ', you failed.');
+  alert(`${playerName}, you failed. Your final score was ${score}`);
 }
