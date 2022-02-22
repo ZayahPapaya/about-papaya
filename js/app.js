@@ -116,9 +116,9 @@ if (a5 === 'yes') {
 let coinflip = Math.floor(Math.random() * 10) + 1;
 console.log(coinflip);
 for (let i = 0; i < 4; i++) {
-  let a6 = prompt('Guess a number between 1 and 10 inclusive.');
+  let a6 = prompt('Guess a number between 1 and 10 inclusive.');// returns string
   //console.log(a6);
-  a6 = parseInt(a6);
+  a6 = parseInt(a6);//string to number
   //let typeCheck = typeof (a6);
   //console.log(typeCheck);
   //console.log(a6);
@@ -132,7 +132,7 @@ for (let i = 0; i < 4; i++) {
     //console.log('Not an answer');
     alert('That is not an answer.');
   } else {
-    if (a6 < coinflip){
+    if (a6 < coinflip) {
       alert('A little low.');
     } else {
       alert('A little high.');
@@ -142,7 +142,7 @@ for (let i = 0; i < 4; i++) {
   }
 }
 alert(`The answer was ${coinflip}!`);
-// Question 7 - Favorite D&D classes - multiple correct - display all correct after - 6 attempts
+// Question 7 - Favorite D&D classes - multiple correct - display all correct after - 6 attempts TODO: Add AND/OR somewhere
 // first check this is 4. if no, try again with no consequences with a hint. Then once 4, ask 4 times for a different class each time? If all 4, then increment score and continue
 let classes = ['artificer', 'barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard'];
 //let favorites = classes[0, 6, 9, 11];
@@ -153,45 +153,38 @@ favorites.push(classes[9]);
 favorites.push(classes[11]);
 //console.log(favorites);
 //console.log(favorites.length);
-
-//^
-
-
-// ignore below this for now
 let lock = 1;
 let attempts7 = 0;
 let subScore;
 let x;
-while(lock === 1){
+alert('The following question(s) refer to the section on D&D');
+while (lock === 1) {
   attempts7 = prompt('How many classes are my favorites?');
   attempts7 = parseInt(attempts7);
   //console.log(attempts7);
-  if(attempts7 === favorites.length){
+  if (attempts7 === favorites.length) {
     let succeeds = [];
     subScore = 0;
-    for(attempts7 > 1; attempts7--;) {
+    for (attempts7 > 1; attempts7--;) {
       let a7b = prompt('List one of my favorite classes.').toLowerCase();
 
-// I avoided using includes as much as possible, as per instructions, but could not find another way to do this without these two.
-
-      if(favorites.includes(a7b)){
-        if(!succeeds.includes(a7b)){
-        subScore++;
-        x = a7b;
-        alert(`${favorites[x]} is correct.`);
-        succeeds.push(a7b);
-        //console.log(subScore + 'subscore');
-        //console.log(succeeds);
-          } else {
+      // I avoided using includes as much as possible, as per instructions, but could not find another way to do this without these two.
+      //if (blah === favorites[1] || favorites[2])
+      if (favorites.includes(a7b) && !succeeds.includes(a7b)) {
+          subScore++;
+          x = a7b;
+          alert(`${a7b} is correct.`);
+          succeeds.push(a7b);
+          //console.log(subScore + 'subscore');
+          //console.log(succeeds);
+        } else if (favorites.includes(a7b) && succeeds.includes(a7b)){
           alert('You need to list unique answers!');
-          }
-      
-      } else {
+        } else {
         alert('Incorrect.');
       }
-        if (subScore === favorites.length) {
-          score++;
-          alert(`You got all ${subScore} correct!`);
+      if (subScore === favorites.length) {
+        score++;
+        alert(`You got all ${subScore} correct!`);
       }
     }
   } else if (isNaN(attempts7)) {
@@ -203,20 +196,20 @@ while(lock === 1){
   //console.log(attempts7);
   //console.log(favorites.length);
   console.log(subScore);
-  if(! isNaN(subScore)){
-    if(subScore < 4){
-          alert(`You did not get all ${favorites.length}. The correct answers were ${favorites}`);
-          //console.log('Fail');
+  if (!isNaN(subScore)) {
+    if (subScore < 4) {
+      alert(`You did not get all ${favorites.length}. The correct answers were ${favorites}`);
+      //console.log('Fail');
+    }
   }
-  }
-  if(attempts7 === -1){
+  if (attempts7 === -1) {
     lock = 0;
     //console.log('Locked');
   }
 }
 if (score >= 4) {
   //console.log(playerName + ', you passed.');
-  alert(`${playerName},you passed. Your final score was ${score}`);
+  alert(`${playerName}, you passed. Your final score was ${score}`);
 } else {
   //console.log(playerName + ', you failed.');
   alert(`${playerName}, you failed. Your final score was ${score}`);
