@@ -1,5 +1,5 @@
 'use strict';
-// + Include on your HTML page a short biography, your education history, an overview of your job experience, and any goals that you may have. 
+// + Include on your HTML page a short biography, your education history, an overview of your job experience, and any goals that you may have.
 
 // + Prompt the user a total of exactly five yes or no questions. The user input for the answer must accept either y/n or yes/no responses while taking into consideration case sensitivity by normalizing the user input so that it can be validated (hint: look into the .toUpperCase() or .toLowerCase() functions). Be sure to let the user know if they answered the question correctly by alerting them with a response.
 
@@ -35,178 +35,214 @@
 let score = 0;
 let playerName = prompt('What is your name?');
 console.log(playerName);
-alert('Hello, ' + playerName + '. Please answer the following questions simply with a yes or a no.');
+alert(
+  'Hello, ' +
+    playerName +
+    '. Please answer the following questions simply with a yes or a no.'
+);
 
 // Question 1 -
-let a1 = prompt('Are my pronouns he/him?').toLowerCase();
-if (a1 === 'no') {
-  ////console.log('correct');
-  alert('Correct!');
-  score++;
-  console.log(score);
-} else if (a1 === 'yes') {
-  ////console.log('incorrect');
-  alert('Incorrect!');
-} else {
-  //console.log('Not an answer.');
-  alert('That is not an answer.');
+function q1() {
+  let a1 = prompt('Are my pronouns he/him?').toLowerCase();
+  if (a1 === 'no') {
+    ////console.log('correct');
+    alert('Correct!');
+    score++;
+    console.log(score);
+  } else if (a1 === 'yes') {
+    ////console.log('incorrect');
+    alert('Incorrect!');
+  } else {
+    //console.log('Not an answer.');
+    alert('That is not an answer.');
+  }
 }
-
+q1();
 // Question 2 -
-let a2 = prompt('Have I had more than one job?').toLowerCase();
-if (a2 === 'yes') {
-  //console.log('correct');
-  alert('Correct!');
-  score++;
-  console.log(score);
-} else if (a2 === 'no') {
-  //console.log('incorrect');
-  alert('Incorrect!');
-} else {
-  //console.log('Not an answer.');
-  alert('That is not an answer.');
-}
-
-// Question 3 -
-let a3 = prompt('Do I drink coffee?').toLowerCase();
-if (a3 === 'yes') {
-  //console.log('correct');
-  alert('Correct!');
-  score++;
-  console.log(score);
-} else if (a3 === 'no') {
-  //console.log('incorrect');
-  alert('Incorrect!');
-} else {
-  //console.log('Not an answer.');
-  alert('That is not an answer.');
-}
-
-// Question 4 -
-let a4 = prompt('Do I have a preferred name?').toLowerCase();
-if (a4 === 'yes') {
-  //console.log('correct');
-  alert('Correct!');
-  score++;
-  console.log(score);
-} else if (a4 === 'no') {
-  //console.log('incorrect');
-  alert('Incorrect!');
-} else {
-  //console.log('Not an answer.');
-  alert('That is not an answer.');
-}
-
-// Question 5 -
-let a5 = prompt('Do you want a new set of dice?').toLowerCase();
-if (a5 === 'yes') {
-  //console.log('correct');
-  alert('Correct!');
-  score++;
-  console.log(score);
-} else if (a5 === 'no') {
-  //console.log('incorrect');
-  alert('Incorrect!');
-} else {
-  //console.log('Not an answer.');
-  alert('That is not an answer.');
-}
-
-// Question 6 - Random number guessing game 4 chances, log if too high or low. After tell correct answer
-let coinflip = Math.floor(Math.random() * 10) + 1;
-console.log(coinflip);
-for (let i = 0; i < 4; i++) {
-  let a6 = prompt('Guess a number between 1 and 10 inclusive.');// returns string
-  //console.log(a6);
-  a6 = parseInt(a6);//string to number
-  //let typeCheck = typeof (a6);
-  //console.log(typeCheck);
-  //console.log(a6);
-  if (a6 === coinflip) {
+function q2() {
+  let a2 = prompt('Have I had more than one job?').toLowerCase();
+  if (a2 === 'yes') {
     //console.log('correct');
     alert('Correct!');
     score++;
-    //console.log(score);
-    break;
-  } else if (isNaN(a6)) {
-    //console.log('Not an answer');
-    alert('That is not an answer.');
-  } else {
-    if (a6 < coinflip) {
-      alert('A little low.');
-    } else {
-      alert('A little high.');
-    }
+    console.log(score);
+  } else if (a2 === 'no') {
     //console.log('incorrect');
-    //alert('Incorrect!');
+    alert('Incorrect!');
+  } else {
+    //console.log('Not an answer.');
+    alert('That is not an answer.');
   }
 }
-alert(`The answer was ${coinflip}!`);
+q2();
+// Question 3 -
+function q3() {
+  let a3 = prompt('Do I drink coffee?').toLowerCase();
+  if (a3 === 'yes') {
+    //console.log('correct');
+    alert('Correct!');
+    score++;
+    console.log(score);
+  } else if (a3 === 'no') {
+    //console.log('incorrect');
+    alert('Incorrect!');
+  } else {
+    //console.log('Not an answer.');
+    alert('That is not an answer.');
+  }
+}
+q3();
+// Question 4 -
+function q4() {
+  let a4 = prompt('Do I have a preferred name?').toLowerCase();
+  if (a4 === 'yes') {
+    //console.log('correct');
+    alert('Correct!');
+    score++;
+    console.log(score);
+  } else if (a4 === 'no') {
+    //console.log('incorrect');
+    alert('Incorrect!');
+  } else {
+    //console.log('Not an answer.');
+    alert('That is not an answer.');
+  }
+}
+q4();
+// Question 5 -
+function q5() {
+  let a5 = prompt('Do you want a new set of dice?').toLowerCase();
+  if (a5 === 'yes') {
+    //console.log('correct');
+    alert('Correct!');
+    score++;
+    console.log(score);
+  } else if (a5 === 'no') {
+    //console.log('incorrect');
+    alert('Incorrect!');
+  } else {
+    //console.log('Not an answer.');
+    alert('That is not an answer.');
+  }
+}
+q5();
+// Question 6 - Random number guessing game 4 chances, log if too high or low. After tell correct answer
+function q6() {
+  let coinflip = Math.floor(Math.random() * 10) + 1;
+  console.log(coinflip);
+  for (let i = 0; i < 4; i++) {
+    let a6 = prompt('Guess a number between 1 and 10 inclusive.'); // returns string
+    //console.log(a6);
+    a6 = parseInt(a6); //string to number
+    //let typeCheck = typeof (a6);
+    //console.log(typeCheck);
+    //console.log(a6);
+    if (a6 === coinflip) {
+      //console.log('correct');
+      alert('Correct!');
+      score++;
+      //console.log(score);
+      break;
+    } else if (isNaN(a6)) {
+      //console.log('Not an answer');
+      alert('That is not an answer.');
+    } else {
+      if (a6 < coinflip) {
+        alert('A little low.');
+      } else {
+        alert('A little high.');
+      }
+      //console.log('incorrect');
+      //alert('Incorrect!');
+    }
+  }
+  alert(`The answer was ${coinflip}!`);
+}
+q6();
 // Question 7 - Favorite D&D classes - multiple correct - display all correct after - 6 attempts TODO: Add AND/OR somewhere
 // first check this is 4. if no, try again with no consequences with a hint. Then once 4, ask 4 times for a different class each time? If all 4, then increment score and continue
-let classes = ['artificer', 'barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard'];
-//let favorites = classes[0, 6, 9, 11];
-let favorites = []
-favorites.push(classes[0]);
-favorites.push(classes[6]);
-favorites.push(classes[9]);
-favorites.push(classes[11]);
-//console.log(favorites);
-//console.log(favorites.length);
-let lock = 1;
-let attempts7 = 0;
-let subScore;
-let x;
-alert('The following question(s) refer to the section on D&D');
-while (lock === 1) {
-  attempts7 = prompt('How many classes are my favorites?');
-  attempts7 = parseInt(attempts7);
-  //console.log(attempts7);
-  if (attempts7 === favorites.length) {
-    let succeeds = [];
-    subScore = 0;
-    for (attempts7 > 1; attempts7--;) {
-      let a7b = prompt('List one of my favorite classes.').toLowerCase();
+function q7() {
+  let classes = [
+    'artificer',
+    'barbarian',
+    'bard',
+    'cleric',
+    'druid',
+    'fighter',
+    'monk',
+    'paladin',
+    'ranger',
+    'rogue',
+    'sorcerer',
+    'warlock',
+    'wizard',
+  ];
+  //let favorites = classes[0, 6, 9, 11];
+  let favorites = [];
+  favorites.push(classes[0]);
+  favorites.push(classes[6]);
+  favorites.push(classes[9]);
+  favorites.push(classes[11]);
+  //console.log(favorites);
+  //console.log(favorites.length);
+  let lock = 1;
+  let attempts7 = 0;
+  let subScore;
+  //let x;
+  alert('The following question(s) refer to the section on D&D');
+  while (lock === 1) {
+    attempts7 = prompt('How many classes are my favorites?');
+    attempts7 = parseInt(attempts7);
+    //console.log(attempts7);
+    if (attempts7 === favorites.length) {
+      let succeeds = [];
+      subScore = 0;
+      for (attempts7 > 1; attempts7--; ) {
+        let a7b = prompt('List one of my favorite classes.').toLowerCase();
 
-      // I avoided using includes as much as possible, as per instructions, but could not find another way to do this without these two.
-      //if (blah === favorites[1] || favorites[2])
-      if (favorites.includes(a7b) && !succeeds.includes(a7b)) {
+        // I avoided using includes as much as possible, as per instructions, but could not find another way to do this without these two.
+        //if (blah === favorites[1] || favorites[2])
+        if (favorites.includes(a7b) && !succeeds.includes(a7b)) {
           subScore++;
-          x = a7b;
+          //x = a7b;
           alert(`${a7b} is correct.`);
           succeeds.push(a7b);
           //console.log(subScore + 'subscore');
           //console.log(succeeds);
-        } else if (favorites.includes(a7b) && succeeds.includes(a7b)){
+        } else if (favorites.includes(a7b) && succeeds.includes(a7b)) {
           alert('You need to list unique answers!');
         } else {
-        alert('Incorrect.');
+          alert('Incorrect.');
+        }
+        if (subScore === favorites.length) {
+          score++;
+          alert(`You got all ${subScore} correct!`);
+        }
       }
-      if (subScore === favorites.length) {
-        score++;
-        alert(`You got all ${subScore} correct!`);
+    } else if (isNaN(attempts7)) {
+      alert('That is not an answer.');
+    } else {
+      alert('Incorrect.');
+    }
+    //console.log('lock check');
+    //console.log(attempts7);
+    //console.log(favorites.length);
+    console.log(subScore);
+    if (!isNaN(subScore)) {
+      if (subScore < 4) {
+        alert(
+          `You did not get all ${favorites.length}. The correct answers were ${favorites}`
+        );
+        //console.log('Fail');
       }
     }
-  } else if (isNaN(attempts7)) {
-    alert('That is not an answer.');
-  } else {
-    alert('Incorrect.');
-  }
-  //console.log('lock check');
-  //console.log(attempts7);
-  //console.log(favorites.length);
-  console.log(subScore);
-  if (!isNaN(subScore)) {
-    if (subScore < 4) {
-      alert(`You did not get all ${favorites.length}. The correct answers were ${favorites}`);
-      //console.log('Fail');
+    if (attempts7 === -1) {
+      lock = 0;
+      //console.log('Locked');
     }
-  }
-  if (attempts7 === -1) {
-    lock = 0;
-    //console.log('Locked');
   }
 }
+q7();
 if (score >= 4) {
   //console.log(playerName + ', you passed.');
   alert(`${playerName}, you passed. Your final score was ${score}`);
