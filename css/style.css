@@ -12,11 +12,11 @@ h1 {
   text-align: center;
   max-width: 7cm;
 }
-ul {
+/* ul {
   list-style: disc;
   margin: 1rem;
   padding: 1rem;
-}
+} */
 p {
   max-width: 10cm;
   margin-left: 20px;
@@ -32,4 +32,9 @@ p {
   float: right;
   margin-top: -18%;
   margin-right: -15px;
+}
+button {
+  background-color: skyblue;
+  border-radius: 10px;
+  float: left;
 }

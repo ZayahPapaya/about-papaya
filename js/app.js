@@ -126,6 +126,7 @@ function q5() {
   }
 }
 q5();
+let a6;
 // Question 6 - Random number guessing game 4 chances, log if too high or low. After tell correct answer
 function q6() {
   let coinflip = Math.floor(Math.random() * 10) + 1;
@@ -141,6 +142,7 @@ function q6() {
       //console.log('correct');
       alert('Correct!');
       score++;
+      return(a6);
       //console.log(score);
       break;
     } else if (isNaN(a6)) {
@@ -156,7 +158,9 @@ function q6() {
       //alert('Incorrect!');
     }
   }
-  alert(`The answer was ${coinflip}!`);
+  if (a6 !== coinflip) {
+    alert(`The answer was ${coinflip}!`);
+  }
 }
 q6();
 // Question 7 - Favorite D&D classes - multiple correct - display all correct after - 6 attempts TODO: Add AND/OR somewhere
@@ -197,7 +201,7 @@ function q7() {
     if (attempts7 === favorites.length) {
       let succeeds = [];
       subScore = 0;
-      for (attempts7 > 1; attempts7--; ) {
+      for (attempts7 > 1; attempts7--;) {
         let a7b = prompt('List one of my favorite classes.').toLowerCase();
 
         // I avoided using includes as much as possible, as per instructions, but could not find another way to do this without these two.
