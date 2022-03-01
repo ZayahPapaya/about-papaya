@@ -35,14 +35,13 @@ function topTen() {
       message = ' Dragons';
       break;
     default:
-      console.log('What?');
+      message = 'How did you get here?';
   }
   return (message);
 }
 
 let score = 0;
 let playerName = prompt('What is your name?');
-console.log(playerName);
 alert(
   'Hello, ' +
   playerName +
@@ -54,7 +53,6 @@ function q1() {
   if (a1 === 'no') {
     alert('Correct!');
     score++;
-    console.log(score);
   } else if (a1 === 'yes') {
     alert('Incorrect!');
   } else {
@@ -68,7 +66,6 @@ function q2() {
   if (a2 === 'yes') {
     alert('Correct!');
     score++;
-    console.log(score);
   } else if (a2 === 'no') {
     alert('Incorrect!');
   } else {
@@ -82,7 +79,6 @@ function q3() {
   if (a3 === 'yes') {
     alert('Correct!');
     score++;
-    console.log(score);
   } else if (a3 === 'no') {
     alert('Incorrect!');
   } else {
@@ -96,7 +92,6 @@ function q4() {
   if (a4 === 'yes') {
     alert('Correct!');
     score++;
-    console.log(score);
   } else if (a4 === 'no') {
     alert('Incorrect!');
   } else {
@@ -110,7 +105,6 @@ function q5() {
   if (a5 === 'yes') {
     alert('Correct!');
     score++;
-    console.log(score);
   } else if (a5 === 'no') {
     alert('Incorrect!');
   } else {
@@ -122,7 +116,6 @@ let a6;
 // Question 6 - 
 function q6() {
   let coinflip = Math.floor(Math.random() * 10) + 1;
-  console.log(coinflip);
   for (let i = 0; i < 4; i++) {
     let a6 = prompt('Guess a number between 1 and 10 inclusive.'); // returns string
     a6 = parseInt(a6);
@@ -199,7 +192,6 @@ function q7() {
     } else {
       alert('Incorrect.');
     }
-    console.log(subScore);
     if (!isNaN(subScore)) {
       if (subScore < 4) {
         alert(
